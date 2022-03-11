@@ -82,6 +82,18 @@
         <RequiredComponent>common_base_resource</RequiredComponent>
 		<RequiredComponent>dsp_resource</RequiredComponent>
       </Project>
+	  <Project Name="demo_eclic">
+        <DisplayPath>baremetal</DisplayPath>
+        <Path>nuclei_rvstar/projects/baremetal/demo_eclic/project.cdkproj</Path>
+        <CopyFolder>nuclei_rvstar/projects/baremetal/demo_eclic</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+	  <Project Name="demo_timer">
+        <DisplayPath>baremetal</DisplayPath>
+        <Path>nuclei_rvstar/projects/baremetal/demo_timer/project.cdkproj</Path>
+        <CopyFolder>nuclei_rvstar/projects/baremetal/demo_timer</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
 	  <Project Name="helloworld">
         <DisplayPath>baremetal</DisplayPath>
         <Path>nuclei_rvstar/projects/baremetal/helloworld/project.cdkproj</Path>
