@@ -46,12 +46,12 @@
     <EnvPath></EnvPath>
     <Components>
       <Component ID="common_base_resource">
-        <Folder Name="PACK/boards"/>
-		<Folder Name="PACK/gd32vf103c_start_sdk"/>
-		<Folder Name="PACK/Peripherals"/>
-		<Folder Name="PACK/USBFS_Device"/>
-		<Folder Name="PACK/USBFS_Host"/>
-		<Folder Name="PACK/Utilities"/>
+        <Folder Name="gd32vf103c_start/PACK/boards"/>
+		<Folder Name="gd32vf103c_start/PACK/gd32vf103c_start_sdk"/>
+		<Folder Name="gd32vf103c_start/PACK/Peripherals"/>
+		<Folder Name="gd32vf103c_start/PACK/USBFS_Device"/>
+		<Folder Name="gd32vf103c_start/PACK/USBFS_Host"/>
+		<Folder Name="gd32vf103c_start/PACK/Utilities"/>
       </Component>
     </Components>
     <Projects>

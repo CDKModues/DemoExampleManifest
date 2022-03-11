@@ -46,14 +46,14 @@
     <EnvPath></EnvPath>
     <Components>
       <Component ID="common_base_resource">
-        <Folder Name="PACK/boards"/>
-		<Folder Name="PACK/Common"/>
-		<Folder Name="PACK/Core"/>
-		<Folder Name="PACK/rvstar_sdk"/>
+        <Folder Name="nuclei_rvstar/PACK/boards"/>
+		<Folder Name="nuclei_rvstar/PACK/Common"/>
+		<Folder Name="nuclei_rvstar/PACK/Core"/>
+		<Folder Name="nuclei_rvstar/PACK/rvstar_sdk"/>
       </Component>
 	  <Component ID="dsp_resource">
-        <Folder Name="PACK/DSP"/>
-		<Folder Name="PACK/Library"/>
+        <Folder Name="nuclei_rvstar/PACK/DSP"/>
+		<Folder Name="nuclei_rvstar/PACK/Library"/>
       </Component>
     </Components>
     <Projects>
