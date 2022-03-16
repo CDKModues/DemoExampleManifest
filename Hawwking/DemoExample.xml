@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <!--
+  Name是在CDK中用于显示的工具链名称，建议具备一定可读性
+  -->
+  <Name>中科昊芯开发板例程</Name>
+  <!--
+  ID是工具组件的唯一标识符，不对外显示，全网唯一
+  -->
+  <ID>Hawwking-SDK</ID>
+  <!--
+  Vendor是提供该第三方工具的厂商名
+  -->
+  <Vendor>Hawwking</Vendor>
+  <!--
+  URL一般是一个web可访问的网站，用于宣传使用
+  -->
+  <URL>http://www.haawking.cn/zyxz</URL>
+  <!--
+  Description用于在CDK中显示对该工具的简单说明
+  -->
+  <Description>中科昊芯开发板例程</Description>
+  <!--
+  Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
+  -->
+  <Version Value="V1.0.0">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>git</ResourceType>
+    <!--
+    ResourceURL是获取该资源的地址，外网可访问
+    -->
+    <ResourceURL>https://gitee.com/haawking/cdk_lib.git</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>7e73e39647e397878039c5a7afad0094886796dd</ResourceValidation>
+    <!--
+    1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
+    -->
+    <EnvPath></EnvPath>
+    <Projects>
+      <Project Name="HXS320F28027">
+        <DisplayPath>Examples</DisplayPath>
+        <Path>LIB_HX2000_V1.0/projects/CDK/HXS320F28027/HXS320F28027.cdkproj</Path>
+        <CopyFolder>LIB_HX2000_V1.0/projects/CDK/HXS320F28027</CopyFolder>
+        <CopyFolder>LIB_HX2000_V1.0/HXS320F28027/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V1.0/HXS320F28027/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V1.0/HXS320F28027/src</CopyFolder>
+      </Project>
+      <Project Name="HXS320F28034">
+        <DisplayPath>Examples</DisplayPath>
+        <Path>LIB_HX2000_V1.0/projects/CDK/HXS320F28034/HXS320F28034.cdkproj</Path>
+        <CopyFolder>LIB_HX2000_V1.0/projects/CDK/HXS320F28034</CopyFolder>
+        <CopyFolder>LIB_HX2000_V1.0/HXS320F28034/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V1.0/HXS320F28034/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V1.0/HXS320F28034/src</CopyFolder>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>
