@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <Name>基于CB2201开发板的示例集</Name>
+  <ID>CB2201-SDK</ID>
+  <Vendor>T-Head（平头哥）</Vendor>
+  <URL>https://occ.t-head.cn/vendor/detail/index?id=635878225301471232&amp;vendorId=3706716635429273600&amp;module=4</URL>
+  <Description>基于CB2201开发板的示例集</Description>
+  <Version Value="V1.0.0">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>zip</ResourceType>
+    <!--
+    ResourceURL是获取该资源的地址，外网可访问
+    -->
+    <ResourceURL>https://github.com/CDKModues/CB2201-SDK/archive/refs/heads/master.zip</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>369c345d6399e63fa1bd9763f7fdaabd</ResourceValidation>
+    <EnvPath></EnvPath>
+    <Projects>
+      <Project Name="CB2201-BareMetal">
+        <DisplayPath>BareMetal</DisplayPath>
+        <Path>CB2201-SDK-master/CB2201-BareMetal/project.cdkproj</Path>
+        <CopyFolder>CB2201-SDK-master/CB2201-BareMetal</CopyFolder>
+      </Project>
+      <Project Name="CB2201-Rhino">
+        <DisplayPath>RTOS</DisplayPath>
+        <Path>CB2201-SDK-master/RTOS/CB2201-Rhino/project.cdkproj</Path>
+        <CopyFolder>CB2201-SDK-master/RTOS/CB2201-Rhino</CopyFolder>
+      </Project>
+      <Project Name="CB2201-Rhino-OSTrace">
+        <DisplayPath>RTOS</DisplayPath>
+        <Path>CB2201-SDK-master/RTOS/CB2201-Rhino-OSTrace/project.cdkproj</Path>
+        <CopyFolder>CB2201-SDK-master/RTOS/CB2201-Rhino-OSTrace</CopyFolder>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>
