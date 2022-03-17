@@ -3,7 +3,7 @@
   <!--
   Name是在CDK中用于显示的工具链名称，建议具备一定可读性
   -->
-  <Name>E906FD芯片在SmartL平台上示例集</Name>
+  <Name>平头哥CPU E906FD在SmartL验证平台上示例集</Name>
   <!--
   ID是工具组件的唯一标识符，不对外显示，全网唯一
   -->
@@ -15,7 +15,7 @@
   <!--
   URL一般是一个web可访问的网站，用于宣传使用
   -->
-  <URL>https://occ.t-head.cn/</URL>
+  <URL>https://occ.t-head.cn/vendor/cpu/index?spm=a2cl5.25410500.0.0.7e9e180f3WTlCO&amp;id=3806463049662468096</URL>
   <!--
   Description用于在CDK中显示对该工具的简单说明
   -->
@@ -346,7 +346,7 @@
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e906fd-freertos-timer">
-        <DisplayPath>examples:kernel:time</DisplayPath>
+        <DisplayPath>examples:kernel:timer</DisplayPath>
         <Path>SmartL_E906FD-R2S2-V1.7.9/projects/examples/kernel/timer/freertos/CDK/smartl_e906fd-freertos-timer.cdkproj</Path>
         <CopyFolder>SmartL_E906FD-R2S2-V1.7.9/projects/examples/kernel/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
@@ -354,7 +354,7 @@
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e906fd-rhino-timer">
-        <DisplayPath>examples:kernel:time</DisplayPath>
+        <DisplayPath>examples:kernel:timer</DisplayPath>
         <Path>SmartL_E906FD-R2S2-V1.7.9/projects/examples/kernel/timer/rhino/CDK/smartl_e906fd-rhino-timer.cdkproj</Path>
         <CopyFolder>SmartL_E906FD-R2S2-V1.7.9/projects/examples/kernel/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
@@ -362,7 +362,7 @@
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e906fd-ucos3-timer">
-        <DisplayPath>examples:kernel:time</DisplayPath>
+        <DisplayPath>examples:kernel:timer</DisplayPath>
         <Path>SmartL_E906FD-R2S2-V1.7.9/projects/examples/kernel/timer/ucos3/CDK/smartl_e906fd-ucos3-timer.cdkproj</Path>
         <CopyFolder>SmartL_E906FD-R2S2-V1.7.9/projects/examples/kernel/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
@@ -382,7 +382,7 @@
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e906fd-freertos-kernel">
-        <DisplayPath>tests</DisplayPath>
+        <DisplayPath>tests:kernel</DisplayPath>
         <Path>SmartL_E906FD-R2S2-V1.7.9/projects/tests/kernel/freertos/CDK/smartl_e906fd-freertos-kernel.cdkproj</Path>
         <CopyFolder>SmartL_E906FD-R2S2-V1.7.9/projects/tests/kernel/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
@@ -390,7 +390,7 @@
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e906fd-rhino-kernel">
-        <DisplayPath>tests</DisplayPath>
+        <DisplayPath>tests:kernel</DisplayPath>
         <Path>SmartL_E906FD-R2S2-V1.7.9/projects/tests/kernel/rhino/CDK/smartl_e906fd-rhino-kernel.cdkproj</Path>
         <CopyFolder>SmartL_E906FD-R2S2-V1.7.9/projects/tests/kernel/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
@@ -398,7 +398,7 @@
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e906fd-ucos3-kernel">
-        <DisplayPath>tests</DisplayPath>
+        <DisplayPath>tests:kernel</DisplayPath>
         <Path>SmartL_E906FD-R2S2-V1.7.9/projects/tests/kernel/ucos3/CDK/smartl_e906fd-ucos3-kernel.cdkproj</Path>
         <CopyFolder>SmartL_E906FD-R2S2-V1.7.9/projects/tests/kernel/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
