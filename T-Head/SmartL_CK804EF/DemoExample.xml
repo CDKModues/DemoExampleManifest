@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <!--
+  Name是在CDK中用于显示的工具链名称，建议具备一定可读性
+  -->
+  <Name>平头哥CPU CK804EF在SmartL验证平台上示例集</Name>
+  <!--
+  ID是工具组件的唯一标识符，不对外显示，全网唯一
+  -->
+  <ID>SmartL_CK804EF</ID>
+  <!--
+  Vendor是提供该第三方工具的厂商名
+  -->
+  <Vendor>T-Head（平头哥）</Vendor>
+  <!--
+  URL一般是一个web可访问的网站，用于宣传使用
+  -->
+  <URL>https://www.t-head.cn/product/E804?spm=a2ouz.12986968.0.0.7bfc2be0Fhqc7Q</URL>
+  <!--
+  Description用于在CDK中显示对该工具的简单说明
+  -->
+  <Description>平头哥官方基于SmartL平台CK804EF CPU核的工程示例集合</Description>
+  <!--
+  Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
+  -->
+  <Version Value="V1.6.0">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>zip</ResourceType>
+    <ResourceURL>https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/cop-image-prod/resource/420257228264570880/1584583377902/SmartL_CK804EF-v1.6.zip</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>a9e1b4dbcd68175659fc95129c0d7964</ResourceValidation>
+    <!--
+    1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
+    -->
+    <EnvPath></EnvPath>
+    <!--
+    CDK使用DemoExample包创建工程的原理是将SDK zip包解压以后，指定的文件拷贝到需要创建的工程根路径下；
+    1 一个SDK zip包可以包含一个或者多个CDK工程，并且这些工程可以复用源代码文件；
+    2 这里包含两个主体部分来描述工程的资源：
+      2.1 <Projects>节点用来描述当前资源包中包含的工程；
+      2.2 <Components>节点用来描述创建工程时需要拷贝的一些资源，因为有些资源是工程复用的，所以<Components>节点可以被Project节点复用
+    -->
+    <Components>
+      <Component ID="common_base_resource">
+        <Folder Name="SmartL_CK804EF-v1.6/board"/>
+        <Folder Name="SmartL_CK804EF-v1.6/csi_core"/>
+        <Folder Name="SmartL_CK804EF-v1.6/csi_driver"/>
+        <Folder Name="SmartL_CK804EF-v1.6/libs"/>
+        <Folder Name="SmartL_CK804EF-v1.6/utilities"/>
+      </Component>
+      <Component ID="csi_kernel_header">
+        <Folder Name="SmartL_CK804EF-v1.6/csi_kernel/include"/>
+      </Component>
+      <Component ID="csi_kernel_freeRTOS">
+        <Folder Name="SmartL_CK804EF-v1.6/csi_kernel/freertosv8.2.3"/>
+      </Component>
+      <Component ID="csi_kernel_rhino">
+        <Folder Name="SmartL_CK804EF-v1.6/csi_kernel/rhino"/>
+      </Component>
+      <Component ID="csi_dsp">
+        <Folder Name="SmartL_CK804EF-v1.6/csi_dsp"/>
+      </Component>
+    </Components>
+    <!--
+    ProjectTree节点描述了一个树结构，在CDK中以树结构展示，根节点是<T-Head>/<Name></Name>节点；
+    然后就是ProjectTree节点描述的树
+    -->
+    <Projects>
+      <!--
+      每个独立的Project节点描述一个工程
+      -->
+      <Project Name="smartl_ck804ef-coremark">
+        <!--
+        DisplayPath描述了当前工程在工程列表中的树节点，使用 : （英文冒号）分割；
+        以当前节点描述为例，在CDK工程视图的树形结构显示为：
+           - T-Head                           （这是Vendor名称）
+             - SmartL_e907fdp-DemoExamples     （这是本Demo Example 的名称）
+                 - benchmark                  （从这里开始，按照 : 作为树结构分割进行树显示 ）
+                   - smartl_e907fdp-coremark   （终节点是工程名）
+        -->
+        <DisplayPath>benchmark</DisplayPath>
+        <!--
+        Path描述工程cdkproj文件具体位置
+        -->
+        <Path>SmartL_CK804EF-v1.6/projects/benchmark/coremark/CDK/smartl_ck804ef-coremark.cdkproj</Path>
+        <!--
+        CopyFolder描述创建该工程需要从此包中拷贝的目录
+        一个Project节点可以有多个CopyFolder，也可以没有
+        -->
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/benchmark/coremark</CopyFolder>
+        <!--
+        RequiredComponent的值就是前面 Components/Component:ID的值
+        表示当前工程除了CopyFolder节点需要拷贝以外，还需要拷贝的资源
+        一个Project节点可以有多个RequiredComponent，也可以没有
+        -->
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-dhrystone">
+        <DisplayPath>benchmark</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/benchmark/dhrystone/CDK/smartl_ck804ef-dhrystone.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/benchmark/dhrystone</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-helix">
+        <DisplayPath>benchmark</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/benchmark/helix/CDK/smartl_ck804ef-helix.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/benchmark/helix</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-linpack_sp">
+        <DisplayPath>benchmark</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/benchmark/linpack_sp/CDK/smartl_ck804ef-linpack_sp.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/benchmark/linpack_sp</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-cache_tcip">
+        <DisplayPath>examples:core</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/core/cache_tcip/CDK/smartl_ck804ef-cache_tcip.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/core/cache_tcip</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-mpu">
+        <DisplayPath>examples:core</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/core/mpu/CDK/smartl_ck804ef-mpu.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/core/mpu</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-vic">
+        <DisplayPath>examples:core</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/core/vic/CDK/smartl_ck804ef-vic.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/core/vic/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-gpio">
+        <DisplayPath>examples:driver</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/driver/gpio/CDK/smartl_ck804ef-gpio.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/driver/gpio/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-timer">
+        <DisplayPath>examples:driver</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/driver/timer/CDK/smartl_ck804ef-timer.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/driver/timer/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-usart">
+        <DisplayPath>examples:driver</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/driver/usart/CDK/smartl_ck804ef-usart.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/driver/usart/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-csky_dsp2_fir">
+        <DisplayPath>examples:dsp</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_fir/CDK/smartl_ck804ef-csky_dsp2_fir.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_fir</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_dsp</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-csky_dsp2_matrix">
+        <DisplayPath>examples:dsp</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_matrix/CDK/smartl_ck804ef-csky_dsp2_matrix.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_matrix</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_dsp</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-csky_dsp2_rfft">
+        <DisplayPath>examples:dsp</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_rfft/CDK/smartl_ck804ef-csky_dsp2_rfft.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_rfft</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_dsp</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-csky_dsp2_sin">
+        <DisplayPath>examples:dsp</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_sin/CDK/smartl_ck804ef-csky_dsp2_sin.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_sin</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_dsp</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-csky_dsp2_variance">
+        <DisplayPath>examples:dsp</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_variance/CDK/smartl_ck804ef-csky_dsp2_variance.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/dsp/csky_dsp2_variance</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_dsp</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-csky_dsp2_nn_cifar10">
+        <DisplayPath>examples:dsp2_nn</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/dsp2_nn/csky_dsp2_nn_cifar10/CDK/smartl_ck804ef-csky_dsp2_nn_cifar10.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/dsp2_nn/csky_dsp2_nn_cifar10</CopyFolder>
+        <CopyFolder>SmartL_CK804EF-v1.6/csi_nn</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_dsp</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-hello_world">
+        <DisplayPath>examples</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/hello_world/CDK/smartl_ck804ef-hello_world.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/hello_world/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-event">
+        <DisplayPath>examples:kernel:event</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/event/freertos/CDK/smartl_ck804ef-freertos-event.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/event/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-event">
+        <DisplayPath>examples:kernel:event</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/event/rhino/CDK/smartl_ck804ef-rhino-event.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/event/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-mem_pool">
+        <DisplayPath>examples:kernel:mem_pool</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/mem_pool/rhino/CDK/smartl_ck804ef-rhino-mem_pool.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/mem_pool/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-message_q">
+        <DisplayPath>examples:kernel:message_q</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/message_q/freertos/CDK/smartl_ck804ef-freertos-message_q.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/message_q/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-message_q">
+        <DisplayPath>examples:kernel:message_q</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/message_q/rhino/CDK/smartl_ck804ef-rhino-message_q.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/message_q/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-mutex">
+        <DisplayPath>examples:kernel:mutex</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/mutex/freertos/CDK/smartl_ck804ef-freertos-mutex.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/mutex/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-mutex">
+        <DisplayPath>examples:kernel:mutex</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/mutex/rhino/CDK/smartl_ck804ef-rhino-mutex.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/mutex/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-sem">
+        <DisplayPath>examples:kernel:semaphore</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/sem/freertos/CDK/smartl_ck804ef-freertos-sem.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/sem/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-sem">
+        <DisplayPath>examples:kernel:semaphore</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/sem/rhino/CDK/smartl_ck804ef-rhino-sem.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/sem/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-task">
+        <DisplayPath>examples:kernel:task</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/task/freertos/CDK/smartl_ck804ef-freertos-task.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/task/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-task">
+        <DisplayPath>examples:kernel:task</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/task/rhino/CDK/smartl_ck804ef-rhino-task.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/task/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-time">
+        <DisplayPath>examples:kernel:time</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/time/freertos/CDK/smartl_ck804ef-freertos-time.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/time/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-time">
+        <DisplayPath>examples:kernel:time</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/time/rhino/CDK/smartl_ck804ef-rhino-time.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/time/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-timer">
+        <DisplayPath>examples:kernel:timer</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/timer/freertos/CDK/smartl_ck804ef-freertos-timer.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/timer/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-timer">
+        <DisplayPath>examples:kernel:timer</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/examples/kernel/timer/rhino/CDK/smartl_ck804ef-rhino-timer.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/examples/kernel/timer/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-core">
+        <DisplayPath>tests</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/tests/core/CDK/smartl_ck804ef-core.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/tests/core/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-driver">
+        <DisplayPath>tests</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/tests/driver/CDK/smartl_ck804ef-driver.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/tests/driver/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-freertos-kernel">
+        <DisplayPath>tests:kernel</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/tests/kernel/freertos/CDK/smartl_ck804ef-freertos-kernel.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/tests/kernel/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
+      </Project>
+      <Project Name="smartl_ck804ef-rhino-kernel">
+        <DisplayPath>tests:kernel</DisplayPath>
+        <Path>SmartL_CK804EF-v1.6/projects/tests/kernel/rhino/CDK/smartl_ck804ef-rhino-kernel.cdkproj</Path>
+        <CopyFolder>SmartL_CK804EF-v1.6/projects/tests/kernel/</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>csi_kernel_header</RequiredComponent>
+        <RequiredComponent>csi_kernel_rhino</RequiredComponent>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>
