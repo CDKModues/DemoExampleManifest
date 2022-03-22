@@ -42,6 +42,14 @@
     -->
     <EnvPath></EnvPath>
     <!--
+     可选节点，<ResourceType></ResourceType>非git时，该节点有效
+     对于一些32位的工具，在64位系统上，工具的路径长度会有MAX_PATH（260）的限制
+     为了尽可能的缩短路径，对于存在顶层目录的结构，该节点作用就是
+     指定的顶层目录名，CDK在安装时，会默认把指定的顶层目录名给删除，直接使用底部的目录放在插件根目录中；
+     因此，<EnvPath></EnvPath>指定的路径应该不再包含该顶层目录了；
+    -->
+    <OmitTopFolder>SmartL_E902M-R2S2-V1.7.9</OmitTopFolder>
+    <!--
     CDK使用DemoExample包创建工程的原理是将SDK zip包解压以后，指定的文件拷贝到需要创建的工程根路径下；
     1 一个SDK zip包可以包含一个或者多个CDK工程，并且这些工程可以复用源代码文件；
     2 这里包含两个主体部分来描述工程的资源：
@@ -50,23 +58,23 @@
     -->
     <Components>
       <Component ID="common_base_resource">
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/board"/>
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/csi_core"/>
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/csi_driver"/>
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/libs"/>
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/utilities"/>
+        <Folder Name="board"/>
+        <Folder Name="csi_core"/>
+        <Folder Name="csi_driver"/>
+        <Folder Name="libs"/>
+        <Folder Name="utilities"/>
       </Component>
       <Component ID="csi_kernel_header">
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/csi_kernel/include"/>
+        <Folder Name="csi_kernel/include"/>
       </Component>
       <Component ID="csi_kernel_freeRTOS">
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/csi_kernel/freertosv10.3.1"/>
+        <Folder Name="csi_kernel/freertosv10.3.1"/>
       </Component>
       <Component ID="csi_kernel_ucos3">
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/csi_kernel/ucos3"/>
+        <Folder Name="csi_kernel/ucos3"/>
       </Component>
       <Component ID="csi_kernel_rhino">
-        <Folder Name="SmartL_E902M-R2S2-V1.7.9/csi_kernel/rhino"/>
+        <Folder Name="csi_kernel/rhino"/>
       </Component>
     </Components>
     <!--
@@ -91,12 +99,12 @@
         <!--
         Path描述工程cdkproj文件具体位置
         -->
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/benchmark/coremark/CDK/smartl_e902m-coremark.cdkproj</Path>
+        <Path>projects/benchmark/coremark/CDK/smartl_e902m-coremark.cdkproj</Path>
         <!--
         CopyFolder描述创建该工程需要从此包中拷贝的目录
         一个Project节点可以有多个CopyFolder，也可以没有
         -->
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/benchmark/coremark</CopyFolder>
+        <CopyFolder>projects/benchmark/coremark</CopyFolder>
         <!--
         RequiredComponent的值就是前面 Components/Component:ID的值
         表示当前工程除了CopyFolder节点需要拷贝以外，还需要拷贝的资源
@@ -106,262 +114,267 @@
       </Project>
       <Project Name="smartl_e902m-dhrystone">
         <DisplayPath>benchmark</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/benchmark/dhrystone/CDK/smartl_e902m-dhrystone.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/benchmark/dhrystone</CopyFolder>
+        <Path>projects/benchmark/dhrystone/CDK/smartl_e902m-dhrystone.cdkproj</Path>
+        <CopyFolder>projects/benchmark/dhrystone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-pmp">
         <DisplayPath>examples:core</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/core/pmp/CDK/smartl_e902m-pmp.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/core/pmp</CopyFolder>
+        <Path>projects/examples/core/pmp/CDK/smartl_e902m-pmp.cdkproj</Path>
+        <CopyFolder>projects/examples/core/pmp</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-vic">
         <DisplayPath>examples:core</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/core/vic/CDK/smartl_e902m-vic.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/core/vic/</CopyFolder>
+        <Path>projects/examples/core/vic/CDK/smartl_e902m-vic.cdkproj</Path>
+        <CopyFolder>projects/examples/core/vic/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-gpio">
         <DisplayPath>examples:driver</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/driver/gpio/CDK/smartl_e902m-gpio.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/driver/gpio/</CopyFolder>
+        <Path>projects/examples/driver/gpio/CDK/smartl_e902m-gpio.cdkproj</Path>
+        <CopyFolder>projects/examples/driver/gpio/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-timer">
         <DisplayPath>examples:driver</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/driver/timer/CDK/smartl_e902m-timer.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/driver/timer/</CopyFolder>
+        <Path>projects/examples/driver/timer/CDK/smartl_e902m-timer.cdkproj</Path>
+        <CopyFolder>projects/examples/driver/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-usart">
         <DisplayPath>examples:driver</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/driver/usart/CDK/smartl_e902m-usart.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/driver/usart/</CopyFolder>
+        <Path>projects/examples/driver/usart/CDK/smartl_e902m-usart.cdkproj</Path>
+        <CopyFolder>projects/examples/driver/usart/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-hello_world">
         <DisplayPath>examples</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/hello_world/CDK/smartl_e902m-hello_world.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/hello_world/</CopyFolder>
+        <Path>projects/examples/hello_world/CDK/smartl_e902m-hello_world.cdkproj</Path>
+        <CopyFolder>projects/examples/hello_world/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-event">
         <DisplayPath>examples:kernel:event</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/event/freertos/CDK/smartl_e902m-freertos-event.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/event/</CopyFolder>
+        <Path>projects/examples/kernel/event/freertos/CDK/smartl_e902m-freertos-event.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/event/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-event">
         <DisplayPath>examples:kernel:event</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/event/rhino/CDK/smartl_e902m-rhino-event.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/event/</CopyFolder>
+        <Path>projects/examples/kernel/event/rhino/CDK/smartl_e902m-rhino-event.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/event/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-event">
         <DisplayPath>examples:kernel:event</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/event/ucos3/CDK/smartl_e902m-ucos3-event.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/event/</CopyFolder>
+        <Path>projects/examples/kernel/event/ucos3/CDK/smartl_e902m-ucos3-event.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/event/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-mem_pool">
         <DisplayPath>examples:kernel:mem_pool</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mem_pool/rhino/CDK/smartl_e902m-rhino-mem_pool.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mem_pool/</CopyFolder>
+        <Path>projects/examples/kernel/mem_pool/rhino/CDK/smartl_e902m-rhino-mem_pool.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/mem_pool/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-mem_pool">
         <DisplayPath>examples:kernel:mem_pool</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mem_pool/ucos3/CDK/smartl_e902m-ucos3-mem_pool.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mem_pool/</CopyFolder>
+        <Path>projects/examples/kernel/mem_pool/ucos3/CDK/smartl_e902m-ucos3-mem_pool.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/mem_pool/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-message_q">
         <DisplayPath>examples:kernel:message_q</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/message_q/freertos/CDK/smartl_e902m-freertos-message_q.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/message_q/</CopyFolder>
+        <Path>projects/examples/kernel/message_q/freertos/CDK/smartl_e902m-freertos-message_q.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/message_q/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-message_q">
         <DisplayPath>examples:kernel:message_q</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/message_q/rhino/CDK/smartl_e902m-rhino-message_q.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/message_q/</CopyFolder>
+        <Path>projects/examples/kernel/message_q/rhino/CDK/smartl_e902m-rhino-message_q.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/message_q/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-message_q">
         <DisplayPath>examples:kernel:message_q</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/message_q/ucos3/CDK/smartl_e902m-ucos3-message_q.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/message_q/</CopyFolder>
+        <Path>projects/examples/kernel/message_q/ucos3/CDK/smartl_e902m-ucos3-message_q.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/message_q/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-mutex">
         <DisplayPath>examples:kernel:mutex</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mutex/freertos/CDK/smartl_e902m-freertos-mutex.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mutex/</CopyFolder>
+        <Path>projects/examples/kernel/mutex/freertos/CDK/smartl_e902m-freertos-mutex.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/mutex/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-mutex">
         <DisplayPath>examples:kernel:mutex</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mutex/rhino/CDK/smartl_e902m-rhino-mutex.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mutex/</CopyFolder>
+        <Path>projects/examples/kernel/mutex/rhino/CDK/smartl_e902m-rhino-mutex.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/mutex/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-mutex">
         <DisplayPath>examples:kernel:mutex</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mutex/ucos3/CDK/smartl_e902m-ucos3-mutex.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/mutex/</CopyFolder>
+        <Path>projects/examples/kernel/mutex/ucos3/CDK/smartl_e902m-ucos3-mutex.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/mutex/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-sem">
         <DisplayPath>examples:kernel:semaphore</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/sem/freertos/CDK/smartl_e902m-freertos-sem.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/sem/</CopyFolder>
+        <Path>projects/examples/kernel/sem/freertos/CDK/smartl_e902m-freertos-sem.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/sem/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-sem">
         <DisplayPath>examples:kernel:semaphore</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/sem/rhino/CDK/smartl_e902m-rhino-sem.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/sem/</CopyFolder>
+        <Path>projects/examples/kernel/sem/rhino/CDK/smartl_e902m-rhino-sem.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/sem/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-sem">
         <DisplayPath>examples:kernel:semaphore</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/sem/ucos3/CDK/smartl_e902m-ucos3-sem.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/sem/</CopyFolder>
+        <Path>projects/examples/kernel/sem/ucos3/CDK/smartl_e902m-ucos3-sem.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/sem/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-task">
         <DisplayPath>examples:kernel:task</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/task/freertos/CDK/smartl_e902m-freertos-task.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/task/</CopyFolder>
+        <Path>projects/examples/kernel/task/freertos/CDK/smartl_e902m-freertos-task.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/task/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-task">
         <DisplayPath>examples:kernel:task</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/task/rhino/CDK/smartl_e902m-rhino-task.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/task/</CopyFolder>
+        <Path>projects/examples/kernel/task/rhino/CDK/smartl_e902m-rhino-task.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/task/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-task">
         <DisplayPath>examples:kernel:task</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/task/ucos3/CDK/smartl_e902m-ucos3-task.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/task/</CopyFolder>
+        <Path>projects/examples/kernel/task/ucos3/CDK/smartl_e902m-ucos3-task.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/task/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-time">
         <DisplayPath>examples:kernel:time</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/time/freertos/CDK/smartl_e902m-freertos-time.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/time/</CopyFolder>
+        <Path>projects/examples/kernel/time/freertos/CDK/smartl_e902m-freertos-time.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/time/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-time">
         <DisplayPath>examples:kernel:time</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/time/rhino/CDK/smartl_e902m-rhino-time.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/time/</CopyFolder>
+        <Path>projects/examples/kernel/time/rhino/CDK/smartl_e902m-rhino-time.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/time/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-time">
         <DisplayPath>examples:kernel:time</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/time/ucos3/CDK/smartl_e902m-ucos3-time.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/time/</CopyFolder>
+        <Path>projects/examples/kernel/time/ucos3/CDK/smartl_e902m-ucos3-time.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/time/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-timer">
         <DisplayPath>examples:kernel:timer</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/timer/freertos/CDK/smartl_e902m-freertos-timer.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/timer/</CopyFolder>
+        <Path>projects/examples/kernel/timer/freertos/CDK/smartl_e902m-freertos-timer.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-timer">
         <DisplayPath>examples:kernel:timer</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/timer/rhino/CDK/smartl_e902m-rhino-timer.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/timer/</CopyFolder>
+        <Path>projects/examples/kernel/timer/rhino/CDK/smartl_e902m-rhino-timer.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-timer">
         <DisplayPath>examples:kernel:timer</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/timer/ucos3/CDK/smartl_e902m-ucos3-timer.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/examples/kernel/timer/</CopyFolder>
+        <Path>projects/examples/kernel/timer/ucos3/CDK/smartl_e902m-ucos3-timer.cdkproj</Path>
+        <CopyFolder>projects/examples/kernel/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-core">
         <DisplayPath>tests</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/tests/core/CDK/smartl_e902m-core.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/tests/core/</CopyFolder>
+        <Path>projects/tests/core/CDK/smartl_e902m-core.cdkproj</Path>
+        <CopyFolder>projects/tests/core/</CopyFolder>
+        <CopyFolder>projects/tests/dtest/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-driver">
         <DisplayPath>tests</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/tests/driver/CDK/smartl_e902m-driver.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/tests/driver/</CopyFolder>
+        <Path>projects/tests/driver/CDK/smartl_e902m-driver.cdkproj</Path>
+        <CopyFolder>projects/tests/driver/</CopyFolder>
+        <CopyFolder>projects/tests/dtest/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-freertos-kernel">
         <DisplayPath>tests:kernel</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/tests/kernel/freertos/CDK/smartl_e902m-freertos-kernel.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/tests/kernel/</CopyFolder>
+        <Path>projects/tests/kernel/freertos/CDK/smartl_e902m-freertos-kernel.cdkproj</Path>
+        <CopyFolder>projects/tests/kernel/</CopyFolder>
+        <CopyFolder>projects/tests/dtest/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_freeRTOS</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-rhino-kernel">
         <DisplayPath>tests:kernel</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/tests/kernel/rhino/CDK/smartl_e902m-rhino-kernel.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/tests/kernel/</CopyFolder>
+        <Path>projects/tests/kernel/rhino/CDK/smartl_e902m-rhino-kernel.cdkproj</Path>
+        <CopyFolder>projects/tests/kernel/</CopyFolder>
+        <CopyFolder>projects/tests/dtest/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_rhino</RequiredComponent>
       </Project>
       <Project Name="smartl_e902m-ucos3-kernel">
         <DisplayPath>tests:kernel</DisplayPath>
-        <Path>SmartL_E902M-R2S2-V1.7.9/projects/tests/kernel/ucos3/CDK/smartl_e902m-ucos3-kernel.cdkproj</Path>
-        <CopyFolder>SmartL_E902M-R2S2-V1.7.9/projects/tests/kernel/</CopyFolder>
+        <Path>projects/tests/kernel/ucos3/CDK/smartl_e902m-ucos3-kernel.cdkproj</Path>
+        <CopyFolder>projects/tests/kernel/</CopyFolder>
+        <CopyFolder>projects/tests/dtest/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_kernel_header</RequiredComponent>
         <RequiredComponent>csi_kernel_ucos3</RequiredComponent>
