@@ -187,7 +187,7 @@
         <CopyFolder>projects/examples/driver/usart/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <Project Name="smartl_e907fdp-riscv_dsp2_fir">
+      <!--Project Name="smartl_e907fdp-riscv_dsp2_fir">
         <DisplayPath>examples:dsp</DisplayPath>
         <Path>projects/examples/dsp/riscv_dsp2_fir/CDK/smartl_e907fdp-riscv_dsp2_fir.cdkproj</Path>
         <CopyFolder>projects/examples/dsp/riscv_dsp2_fir</CopyFolder>
@@ -221,7 +221,7 @@
         <CopyFolder>projects/examples/dsp/riscv_dsp2_variance</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>csi_dsp</RequiredComponent>
-      </Project>
+      </Project-->
       <Project Name="smartl_e907fdp-hello_world">
         <DisplayPath>examples</DisplayPath>
         <Path>projects/examples/hello_world/CDK/smartl_e907fdp-hello_world.cdkproj</Path>
