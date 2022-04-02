@@ -181,13 +181,13 @@
         <CopyFolder>projects/examples/driver/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <Project Name="smartl_e907fdp-usart">
+      <!--Project Name="smartl_e907fdp-usart">
         <DisplayPath>examples:driver</DisplayPath>
         <Path>projects/examples/driver/usart/CDK/smartl_e907fdp-usart.cdkproj</Path>
         <CopyFolder>projects/examples/driver/usart/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <!--Project Name="smartl_e907fdp-riscv_dsp2_fir">
+      <Project Name="smartl_e907fdp-riscv_dsp2_fir">
         <DisplayPath>examples:dsp</DisplayPath>
         <Path>projects/examples/dsp/riscv_dsp2_fir/CDK/smartl_e907fdp-riscv_dsp2_fir.cdkproj</Path>
         <CopyFolder>projects/examples/dsp/riscv_dsp2_fir</CopyFolder>

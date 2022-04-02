@@ -153,12 +153,12 @@
         <CopyFolder>projects/examples/driver/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <Project Name="smartl_ck805f-usart">
+      <!--Project Name="smartl_ck805f-usart">
         <DisplayPath>examples:driver</DisplayPath>
         <Path>projects/examples/driver/usart/CDK/smartl_ck805f-usart.cdkproj</Path>
         <CopyFolder>projects/examples/driver/usart/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
-      </Project>
+      </Project-->
       <Project Name="smartl_ck805f-hello_world">
         <DisplayPath>examples</DisplayPath>
         <Path>projects/examples/hello_world/CDK/smartl_ck805f-hello_world.cdkproj</Path>

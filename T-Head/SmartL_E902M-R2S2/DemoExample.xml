@@ -142,12 +142,12 @@
         <CopyFolder>projects/examples/driver/timer/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <Project Name="smartl_e902m-usart">
+      <!--Project Name="smartl_e902m-usart">
         <DisplayPath>examples:driver</DisplayPath>
         <Path>projects/examples/driver/usart/CDK/smartl_e902m-usart.cdkproj</Path>
         <CopyFolder>projects/examples/driver/usart/</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
-      </Project>
+      </Project-->
       <Project Name="smartl_e902m-hello_world">
         <DisplayPath>examples</DisplayPath>
         <Path>projects/examples/hello_world/CDK/smartl_e902m-hello_world.cdkproj</Path>
