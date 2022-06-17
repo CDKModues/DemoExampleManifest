@@ -7,7 +7,7 @@
   <!--
   ID是工具组件的唯一标识符，不对外显示，全网唯一
   -->
-  <ID>HummingBirdv2-riscv-MCU200T-SDK</ID>
+  <ID>HummingBirdv2-riscv-SDK</ID>
   <!--
   Vendor是提供该第三方工具的厂商名
   -->
@@ -46,414 +46,414 @@
     <EnvPath></EnvPath>
     <Components>
       <Component ID="common_base_resource">
-        <Folder Name="hbird-sdk/SoC/hbirdv2/Common/Source"/>
+        <Folder Name="SoC/hbirdv2/Common/Source"/>
       </Component>
       <Component ID="common_base_include">
-        <Folder Name="hbird-sdk/NMSIS/Core/Include"/>
-        <Folder Name="hbird-sdk/SoC/hbirdv2/Common/Include"/>
+        <Folder Name="NMSIS/Core/Include"/>
+        <Folder Name="SoC/hbirdv2/Common/Include"/>
       </Component>
       <Component ID="common_mcu_resource">
-        <Folder Name="hbird-sdk/SoC/hbirdv2/Board/mcu200t"/>
+        <Folder Name="SoC/hbirdv2/Board/mcu200t"/>
       </Component>
       <Component ID="common_ddr_resource">
-        <Folder Name="hbird-sdk/SoC/hbirdv2/Board/ddr200t"/>
+        <Folder Name="SoC/hbirdv2/Board/ddr200t"/>
       </Component>
     </Components>
     <Projects>
       <Project Name="hbird-mcu-e203-coremark">
         <DisplayPath>MCU200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Coremark/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/coremark</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Coremark</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/Coremark/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/coremark</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/Coremark</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-dhrystone">
         <DisplayPath>MCU200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Dhrystone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/dhrystone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Dhrystone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/Dhrystone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/dhrystone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/Dhrystone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-whetstone">
         <DisplayPath>MCU200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Whetstone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/whetstone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Whetstone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/Whetstone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/whetstone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/Whetstone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-dsp">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/DSP/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_dsp</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/DSP</CopyFolder>
-        <CopyFolder>hbird-sdk/NMSIS/DSP/Include</CopyFolder>
-        <CopyFolder>hbird-sdk/NMSIS/Library/DSP/GCC</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/DSP/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_dsp</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/DSP</CopyFolder>
+        <CopyFolder>NMSIS/DSP/Include</CopyFolder>
+        <CopyFolder>NMSIS/Library/DSP/GCC</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-freertos">
         <DisplayPath>MCU200T:FreeRTOS</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/FreeRTOS/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/freertos/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/FreeRTOS</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/FreeRTOS/Source</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/FreeRTOS/project.cdkproj</Path>
+        <CopyFolder>application/freertos/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/FreeRTOS</CopyFolder>
+        <CopyFolder>OS/FreeRTOS/Source</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-helloworld">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Helloworld/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/helloworld</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Helloworld</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/Helloworld/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/helloworld</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/Helloworld</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-plic">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/PLLIC/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_plic</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/PLLIC</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/PLLIC/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_plic</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/PLLIC</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-rtthread">
         <DisplayPath>MCU200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/RTThread/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/RTThread</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/RTThread/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/RTThread</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-rtthread-msh">
         <DisplayPath>MCU200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/RTThread_MSH/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/msh</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/RTThread_MSH</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/RTThread_MSH/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/msh</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/RTThread_MSH</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-timer">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Timer/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_timer</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/Timer</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/Timer/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_timer</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/Timer</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203-ucosii">
         <DisplayPath>MCU200T:UCOSII</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/UCOSII/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/ucosii/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203/UCOSII</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/UCOSII</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203/UCOSII/project.cdkproj</Path>
+        <CopyFolder>application/ucosii/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203/UCOSII</CopyFolder>
+        <CopyFolder>OS/UCOSII</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-coremark">
         <DisplayPath>MCU200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Coremark/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/coremark</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Coremark</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/Coremark/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/coremark</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/Coremark</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-dhrystone">
         <DisplayPath>MCU200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Dhrystone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/dhrystone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Dhrystone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/Dhrystone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/dhrystone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/Dhrystone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-whetstone">
         <DisplayPath>MCU200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Whetstone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/whetstone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Whetstone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/Whetstone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/whetstone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/Whetstone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-freertos">
         <DisplayPath>MCU200T:FreeRTOS</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/FreeRTOS/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/freertos/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/FreeRTOS</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/FreeRTOS/Source</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/FreeRTOS/project.cdkproj</Path>
+        <CopyFolder>application/freertos/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/FreeRTOS</CopyFolder>
+        <CopyFolder>OS/FreeRTOS/Source</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-helloworld">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Helloworld/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/helloworld</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Helloworld</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/Helloworld/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/helloworld</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/Helloworld</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-plic">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/PLLIC/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_plic</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/PLLIC</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/PLLIC/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_plic</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/PLLIC</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-rtthread">
         <DisplayPath>MCU200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/RTThread/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/RTThread</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/RTThread/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/RTThread</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-rtthread-msh">
         <DisplayPath>MCU200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/RTThread_MSH/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/msh</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/RTThread_MSH</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/RTThread_MSH/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/msh</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/RTThread_MSH</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-timer">
         <DisplayPath>MCU200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Timer/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_timer</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/Timer</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/Timer/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_timer</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/Timer</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-mcu-e203e-ucosii">
         <DisplayPath>MCU200T:UCOSII</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/UCOSII/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/ucosii/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/MCU200T/E203E/UCOSII</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/UCOSII</CopyFolder>
+        <Path>Projects/Hummingbirdv2/MCU200T/E203E/UCOSII/project.cdkproj</Path>
+        <CopyFolder>application/ucosii/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/MCU200T/E203E/UCOSII</CopyFolder>
+        <CopyFolder>OS/UCOSII</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_mcu_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-coremark">
         <DisplayPath>DDR200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Coremark/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/coremark</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Coremark</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/Coremark/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/coremark</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/Coremark</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-dhrystone">
         <DisplayPath>DDR200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Dhrystone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/dhrystone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Dhrystone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/Dhrystone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/dhrystone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/Dhrystone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-whetstone">
         <DisplayPath>DDR200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Whetstone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/whetstone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Whetstone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/Whetstone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/whetstone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/Whetstone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-dsp">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/DSP/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_dsp</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/DSP</CopyFolder>
-        <CopyFolder>hbird-sdk/NMSIS/DSP/Include</CopyFolder>
-        <CopyFolder>hbird-sdk/NMSIS/Library/DSP/GCC</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/DSP/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_dsp</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/DSP</CopyFolder>
+        <CopyFolder>NMSIS/DSP/Include</CopyFolder>
+        <CopyFolder>NMSIS/Library/DSP/GCC</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-freertos">
         <DisplayPath>DDR200T:FreeRTOS</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/FreeRTOS/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/freertos/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/FreeRTOS</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/FreeRTOS/Source</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/FreeRTOS/project.cdkproj</Path>
+        <CopyFolder>application/freertos/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/FreeRTOS</CopyFolder>
+        <CopyFolder>OS/FreeRTOS/Source</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-helloworld">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Helloworld/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/helloworld</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Helloworld</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/Helloworld/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/helloworld</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/Helloworld</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-plic">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/PLLIC/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_plic</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/PLLIC</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/PLLIC/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_plic</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/PLLIC</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-rtthread">
         <DisplayPath>DDR200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/RTThread/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/RTThread</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/RTThread/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/RTThread</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-rtthread-msh">
         <DisplayPath>DDR200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/RTThread_MSH/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/msh</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/RTThread_MSH</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/RTThread_MSH/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/msh</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/RTThread_MSH</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-timer">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Timer/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_timer</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/Timer</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/Timer/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_timer</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/Timer</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203-ucosii">
         <DisplayPath>DDR200T:UCOSII</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/UCOSII/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/ucosii/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203/UCOSII</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/UCOSII</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203/UCOSII/project.cdkproj</Path>
+        <CopyFolder>application/ucosii/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203/UCOSII</CopyFolder>
+        <CopyFolder>OS/UCOSII</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-coremark">
         <DisplayPath>DDR200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Coremark/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/coremark</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Coremark</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/Coremark/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/coremark</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/Coremark</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-dhrystone">
         <DisplayPath>DDR200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Dhrystone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/dhrystone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Dhrystone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/Dhrystone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/dhrystone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/Dhrystone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-whetstone">
         <DisplayPath>DDR200T:baremetal:benchmark</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Whetstone/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/benchmark/whetstone</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Whetstone</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/Whetstone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/whetstone</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/Whetstone</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-freertos">
         <DisplayPath>DDR200T:FreeRTOS</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/FreeRTOS/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/freertos/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/FreeRTOS</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/FreeRTOS/Source</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/FreeRTOS/project.cdkproj</Path>
+        <CopyFolder>application/freertos/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/FreeRTOS</CopyFolder>
+        <CopyFolder>OS/FreeRTOS/Source</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-helloworld">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Helloworld/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/helloworld</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Helloworld</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/Helloworld/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/helloworld</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/Helloworld</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-plic">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/PLLIC/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_plic</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/PLLIC</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/PLLIC/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_plic</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/PLLIC</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-rtthread">
         <DisplayPath>DDR200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/RTThread/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/RTThread</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/RTThread/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/RTThread</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-rtthread-msh">
         <DisplayPath>DDR200T:RTThread</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/RTThread_MSH/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/rtthread/msh</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/RTThread_MSH</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/RTThread</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/RTThread_MSH/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/msh</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/RTThread_MSH</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-timer">
         <DisplayPath>DDR200T:baremetal</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Timer/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/baremetal/demo_timer</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/Timer</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/Timer/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_timer</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/Timer</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
       </Project>
       <Project Name="hbird-ddr-e203e-ucosii">
         <DisplayPath>DDR200T:UCOSII</DisplayPath>
-        <Path>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/UCOSII/project.cdkproj</Path>
-        <CopyFolder>hbird-sdk/application/ucosii/demo</CopyFolder>
-        <CopyFolder>hbird-sdk/Projects/Hummingbirdv2/DDR200T/E203E/UCOSII</CopyFolder>
-        <CopyFolder>hbird-sdk/OS/UCOSII</CopyFolder>
+        <Path>Projects/Hummingbirdv2/DDR200T/E203E/UCOSII/project.cdkproj</Path>
+        <CopyFolder>application/ucosii/demo</CopyFolder>
+        <CopyFolder>Projects/Hummingbirdv2/DDR200T/E203E/UCOSII</CopyFolder>
+        <CopyFolder>OS/UCOSII</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
         <RequiredComponent>common_ddr_resource</RequiredComponent>
