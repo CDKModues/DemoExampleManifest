@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <!--
+  Name是在CDK中用于显示的工具链名称，建议具备一定可读性
+  -->
+  <Name>GD32VF103 RVSTAR工程示例</Name>
+  <!--
+  ID是工具组件的唯一标识符，不对外显示，全网唯一
+  -->
+  <ID>GD32VF103_RVSTAR-SDK</ID>
+  <!--
+  Vendor是提供该第三方工具的厂商名
+  -->
+  <Vendor>Nuclei（芯来科技）</Vendor>
+  <!--
+  URL一般是一个web可访问的网站，用于宣传使用
+  -->
+  <URL>https://www.rvmcu.com/quickstart-doc-u-rvstar.html</URL>
+  <!--
+  Description用于在CDK中显示对该工具的简单说明
+  -->
+  <Description>基于GD32VF103的RVSTAR工程示例集</Description>
+  <!--
+  Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
+  -->
+  <Version Value="V0.3.8">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>git</ResourceType>
+    <!--
+    ResourceURL是获取该资源的地址，外网可访问
+    -->
+    <ResourceURL>https://github.com/zchen409/nuclei-sdk.git</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>a9c7f86a3f638965bc531f468cc29aa2d8ad5d87</ResourceValidation>
+    <!--
+    1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
+    -->
+    <EnvPath></EnvPath>
+    <Components>
+      <Component ID="common_base_resource">
+        <Folder Name="SoC/gd32vf103/Board/gd32vf103v_rvstar"/>
+        <Folder Name="SoC/gd32vf103/Common"/>
+      </Component>
+      <Component ID="common_base_include">
+        <Folder Name="NMSIS/Core/Include"/>
+      </Component>
+    </Components>
+    <Projects>
+      <Project Name="RVSTAR-coremark">
+        <DisplayPath>application:baremetal:benchmark</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/coremark/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/coremark</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/coremark</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-dhrystone">
+        <DisplayPath>application:baremetal:benchmark</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/dhrystone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/dhrystone</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/dhrystone</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-whetstone">
+        <DisplayPath>application:baremetal:benchmark</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/whetstone/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/benchmark/whetstone</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/whetstone</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-dsp">
+        <DisplayPath>application:baremetal</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/dsp/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_dsp</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/dsp</CopyFolder>
+        <CopyFolder>NMSIS/DSP</CopyFolder>
+        <CopyFolder>NMSIS/Library/DSP/GCC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-eclic">
+        <DisplayPath>application:baremetal</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/eclic/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_eclic</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/eclic</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-nice">
+        <DisplayPath>application:baremetal</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/nice/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_nice</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/nice</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-timer">
+        <DisplayPath>application:baremetal</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/timer/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/demo_timer</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/timer</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-helloworld">
+        <DisplayPath>application:baremetal</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/helloworld/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/helloworld</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/helloworld</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-smphello">
+        <DisplayPath>application:baremetal</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/smphello/project.cdkproj</Path>
+        <CopyFolder>application/baremetal/smphello</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/smphello</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-freertos">
+        <DisplayPath>application</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/freertos/project.cdkproj</Path>
+        <CopyFolder>application/freertos</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/freertos</CopyFolder>
+        <CopyFolder>OS/FreeRTOS</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-rtthread">
+        <DisplayPath>application</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/rtthread/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/demo</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/rtthread</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-rtthread-msh">
+        <DisplayPath>application</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/rtthread-msh/project.cdkproj</Path>
+        <CopyFolder>application/rtthread/msh</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/rtthread-msh</CopyFolder>
+        <CopyFolder>OS/RTThread</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+      <Project Name="RVSTAR-ucosii">
+        <DisplayPath>application</DisplayPath>
+        <Path>Projects/GD32VF103 RVSTAR/ucosii/project.cdkproj</Path>
+        <CopyFolder>application/ucosii/demo</CopyFolder>
+        <CopyFolder>Projects/GD32VF103 RVSTAR/ucosii</CopyFolder>
+        <CopyFolder>OS/UCOSII</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_base_include</RequiredComponent>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>

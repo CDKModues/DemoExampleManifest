@@ -19,7 +19,7 @@
   <!--
   Description用于在CDK中显示对该工具的简单说明
   -->
-  <Description>基于芯来MCU200T开发板的工程示例集</Description>
+  <Description>基于芯来200T开发板的工程示例集</Description>
   <!--
   Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
   -->
