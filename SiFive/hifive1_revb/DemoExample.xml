@@ -7,7 +7,7 @@
   <!--
   ID是工具组件的唯一标识符，不对外显示，全网唯一
   -->
-  <ID>HiFive1_RevB-SDK</ID>
+  <ID>HiFive1_RevB-freedom-e-sdk</ID>
   <!--
   Vendor是提供该第三方工具的厂商名
   -->
@@ -23,15 +23,15 @@
   <!--
   Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
   -->
-  <Version Value="V1.0.0">
+  <Version Value="V21.11.0">
     <!--
     ResourceType支持的类型有 tar.gz / zip / git 
     -->
-    <ResourceType>7z</ResourceType>
+    <ResourceType>git</ResourceType>
     <!--
     ResourceURL是获取该资源的地址，外网可访问
     -->
-    <ResourceURL>https://occ-oss-prod.oss-cn-hangzhou.aliyuncs.com/resource/dummy/hifive1_revb.7z</ResourceURL>
+    <ResourceURL>https://github.com/zchen409/freedom-e-sdk.git</ResourceURL>
     <!--
     ResourceValidation用于验证ResourceURL的安全性和有效性；
     如果是tar.gz / zip 类型，这里需要提供MD5值；
@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>f76ee8f374b454396c9d5b86ab3c2a25</ResourceValidation>
+    <ResourceValidation>14d99ff4bf9231aecf1207da3dac202ec7490ee8</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
@@ -48,30 +48,298 @@
     ProjectTree节点描述了一个树结构，在CDK中以树结构展示，根节点是<T-Head>/<Name></Name>节点；
     然后就是ProjectTree节点描述的树
     -->
+    <Components>
+      <Component ID="common_base_resource">
+        <Folder Name="bsp/sifive-hifive1-revb"/>
+        <Folder Name="freedom-metal"/>
+        <Folder Name="scl-metal"/>
+      </Component>
+    </Components>
     <Projects>
       <!--
       每个独立的Project节点描述一个工程
       -->
-      <Project Name="hifive1_revb">
+      <Project Name="hifive1_revb-atomics">
         <!--
         DisplayPath描述了当前工程在工程列表中的树节点，使用 : （英文冒号）分割；
         以当前节点描述为例，在CDK工程视图的树形结构显示为：
            - T-Head                           （这是Vendor名称）
-             - SmartL_E906FD-DemoExamples     （这是本Demo Example 的名称）
+             - SmartL_E906FD-Demosoftware     （这是本Demo Example 的名称）
                - V1.7.9                       （这是版本号）
                  - benchmark                  （从这里开始，按照 : 作为树结构分割进行树显示 ）
                    - smartl_e906fd-coremark   （终节点是工程名）
         -->
-        <DisplayPath>example</DisplayPath>
+        <DisplayPath>software</DisplayPath>
         <!--
         Path描述工程cdkproj文件具体位置
         -->
-        <Path>hifive1_revb/project.cdkproj</Path>
+        <Path>Projects/atomics/project.cdkproj</Path>
         <!--
         CopyFolder描述创建该工程需要从此包中拷贝的目录
         一个Project节点可以有多个CopyFolder，也可以没有
         -->
-        <CopyFolder>hifive1_revb</CopyFolder>
+        <CopyFolder>Projects/atomics</CopyFolder>
+        <CopyFolder>software/atomics</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-cflush">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/cflush/project.cdkproj</Path>
+        <CopyFolder>Projects/cflush</CopyFolder>
+        <CopyFolder>software/cflush</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-clic-hardware-vector-interrupts">
+        <DisplayPath>software:clic</DisplayPath>
+        <Path>Projects/clic-hardware-vector-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/hardware-vector-interrupts</CopyFolder>
+        <CopyFolder>software/clic-hardware-vector-interrupts</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-clic-nested-interrupts">
+        <DisplayPath>software:clic</DisplayPath>
+        <Path>Projects/clic-nested-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/nested-interrupts</CopyFolder>
+        <CopyFolder>software/clic-nested-interrupts</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-clic-nonvector-interrupts">
+        <DisplayPath>software:clic</DisplayPath>
+        <Path>Projects/clic-nonvector-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/clic-nonvector-interrupts</CopyFolder>
+        <CopyFolder>software/clic-nonvector-interrupts</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-clic-selective-vector-interrupts">
+        <DisplayPath>software:clic</DisplayPath>
+        <Path>Projects/clic-selective-vector-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/clic-selective-vector-interrupts</CopyFolder>
+        <CopyFolder>software/clic-selective-vector-interrupts</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-coremark">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/coremark/project.cdkproj</Path>
+        <CopyFolder>Projects/coremark</CopyFolder>
+        <CopyFolder>software/coremark</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-csr">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/csr/project.cdkproj</Path>
+        <CopyFolder>Projects/csr</CopyFolder>
+        <CopyFolder>software/csr</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-empty">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/empty/project.cdkproj</Path>
+        <CopyFolder>Projects/empty</CopyFolder>
+        <CopyFolder>software/empty</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-hca-metal">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-hca-metal/project.cdkproj</Path>
+        <CopyFolder>Projects/example-hca-metal</CopyFolder>
+        <CopyFolder>software/example-hca-metal</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-hpm">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-hpm/project.cdkproj</Path>
+        <CopyFolder>Projects/example-hpm</CopyFolder>
+        <CopyFolder>software/example-hpm</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-i2c">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-i2c/project.cdkproj</Path>
+        <CopyFolder>Projects/example-i2c</CopyFolder>
+        <CopyFolder>software/example-i2c</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-itim">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-itim/project.cdkproj</Path>
+        <CopyFolder>Projects/example-itim</CopyFolder>
+        <CopyFolder>software/example-itim</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-l2pf">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-l2pf/project.cdkproj</Path>
+        <CopyFolder>Projects/example-l2pf</CopyFolder>
+        <CopyFolder>software/example-l2pf</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-l2pm">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-l2pm/project.cdkproj</Path>
+        <CopyFolder>Projects/example-l2pm</CopyFolder>
+        <CopyFolder>software/example-l2pm</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-lim">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-lim/project.cdkproj</Path>
+        <CopyFolder>Projects/example-lim</CopyFolder>
+        <CopyFolder>software/example-lim</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-pmp">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-pmp/project.cdkproj</Path>
+        <CopyFolder>Projects/example-pmp</CopyFolder>
+        <CopyFolder>software/example-pmp</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-privilege-level">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-privilege-level/project.cdkproj</Path>
+        <CopyFolder>Projects/example-privilege-level</CopyFolder>
+        <CopyFolder>software/example-privilege-level</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-pwm">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-pwm/project.cdkproj</Path>
+        <CopyFolder>Projects/example-pwm</CopyFolder>
+        <CopyFolder>software/example-pwm</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-remapper">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-remapper/project.cdkproj</Path>
+        <CopyFolder>Projects/example-remapper</CopyFolder>
+        <CopyFolder>software/example-remapper</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-rtc">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-rtc/project.cdkproj</Path>
+        <CopyFolder>Projects/example-rtc</CopyFolder>
+        <CopyFolder>software/example-rtc</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-spi">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-spi/project.cdkproj</Path>
+        <CopyFolder>Projects/example-spi</CopyFolder>
+        <CopyFolder>software/example-spi</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-user-mode">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-user-mode/project.cdkproj</Path>
+        <CopyFolder>Projects/example-user-mode</CopyFolder>
+        <CopyFolder>software/example-user-mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-user-syscall">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-user-syscall/project.cdkproj</Path>
+        <CopyFolder>Projects/example-user-syscall</CopyFolder>
+        <CopyFolder>software/example-user-syscall</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-example-watchdog">
+        <DisplayPath>software:example</DisplayPath>
+        <Path>Projects/example-watchdog/project.cdkproj</Path>
+        <CopyFolder>Projects/example-watchdog</CopyFolder>
+        <CopyFolder>software/example-watchdog</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-hello">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/hello/project.cdkproj</Path>
+        <CopyFolder>Projects/hello</CopyFolder>
+        <CopyFolder>software/hello</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-local-interrupt">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/local-interrupt/project.cdkproj</Path>
+        <CopyFolder>Projects/local-interrupt</CopyFolder>
+        <CopyFolder>software/local-interrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-local-vector-interrupts">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/local-vector-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/local-vector-interrupts</CopyFolder>
+        <CopyFolder>software/local-vector-interrupts</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-mem-latency">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/mem-latency/project.cdkproj</Path>
+        <CopyFolder>Projects/mem-latency</CopyFolder>
+        <CopyFolder>software/mem-latency</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-minimal-boot">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/minimal-boot/project.cdkproj</Path>
+        <CopyFolder>Projects/minimal-boot</CopyFolder>
+        <CopyFolder>software/minimal-boot</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-multicore-plic-interrupts">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/multicore-plic-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/multicore-plic-interrupts</CopyFolder>
+        <CopyFolder>software/multicore-plic-interrupts</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-return-fail">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/return-fail/project.cdkproj</Path>
+        <CopyFolder>Projects/return-fail</CopyFolder>
+        <CopyFolder>software/return-fail</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-return-pass">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/return-pass/project.cdkproj</Path>
+        <CopyFolder>Projects/return-pass</CopyFolder>
+        <CopyFolder>software/return-pass</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-sifive-welcome">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/sifive-welcome/project.cdkproj</Path>
+        <CopyFolder>Projects/sifive-welcome</CopyFolder>
+        <CopyFolder>software/sifive-welcome</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-software-interrupt">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/software-interrupt/project.cdkproj</Path>
+        <CopyFolder>Projects/software-interrupt</CopyFolder>
+        <CopyFolder>software/software-interrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-test-coreip">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/test-coreip/project.cdkproj</Path>
+        <CopyFolder>Projects/test-coreip</CopyFolder>
+        <CopyFolder>software/test-coreip</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-timer-interrupt">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/timer-interrupt/project.cdkproj</Path>
+        <CopyFolder>Projects/timer-interrupt</CopyFolder>
+        <CopyFolder>software/timer-interrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="hifive1_revb-uart-interrupt">
+        <DisplayPath>software</DisplayPath>
+        <Path>Projects/uart-interrupt/project.cdkproj</Path>
+        <CopyFolder>Projects/uart-interrupt</CopyFolder>
+        <CopyFolder>software/uart-interrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
     </Projects>
   </Version>
