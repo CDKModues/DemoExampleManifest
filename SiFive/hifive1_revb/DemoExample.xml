@@ -92,14 +92,14 @@
       <Project Name="hifive1_revb-clic-hardware-vector-interrupts">
         <DisplayPath>software:clic</DisplayPath>
         <Path>Projects/clic-hardware-vector-interrupts/project.cdkproj</Path>
-        <CopyFolder>Projects/hardware-vector-interrupts</CopyFolder>
+        <CopyFolder>Projects/clic-hardware-vector-interrupts</CopyFolder>
         <CopyFolder>software/clic-hardware-vector-interrupts</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="hifive1_revb-clic-nested-interrupts">
         <DisplayPath>software:clic</DisplayPath>
         <Path>Projects/clic-nested-interrupts/project.cdkproj</Path>
-        <CopyFolder>Projects/nested-interrupts</CopyFolder>
+        <CopyFolder>Projects/clic-nested-interrupts</CopyFolder>
         <CopyFolder>software/clic-nested-interrupts</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
