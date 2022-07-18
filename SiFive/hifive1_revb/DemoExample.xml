@@ -285,11 +285,11 @@
         <CopyFolder>software/minimal-boot</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <Project Name="hifive1_revb-multicore-plic-interrupts">
+      <Project Name="hifive1_revb-plic-interrupts">
         <DisplayPath>software</DisplayPath>
-        <Path>Projects/multicore-plic-interrupts/project.cdkproj</Path>
-        <CopyFolder>Projects/multicore-plic-interrupts</CopyFolder>
-        <CopyFolder>software/multicore-plic-interrupts</CopyFolder>
+        <Path>Projects/plic-interrupts/project.cdkproj</Path>
+        <CopyFolder>Projects/plic-interrupts</CopyFolder>
+        <CopyFolder>software/plic-interrupts</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
       <Project Name="hifive1_revb-return-fail">
