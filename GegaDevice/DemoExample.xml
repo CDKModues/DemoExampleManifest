@@ -289,7 +289,7 @@
       <Project Name="EXMC_TouchScreen">
         <DisplayPath>GD32VF103V</DisplayPath>
         <Path>GD32VF103V_EVAL_Demo_Suites/Projects/14_EXMC_TouchScreen/CDK/project.cdkproj</Path>
-        <CopyFolder>Projects/14_EXMC_TouchScreen</CopyFolder>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/14_EXMC_TouchScreen</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
       </Project>
