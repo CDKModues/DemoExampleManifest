@@ -285,7 +285,7 @@
         <CopyFolder>software/minimal-boot</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
       </Project>
-      <Project Name="hifive1_revb-multicore-plic-interrupts">
+      <Project Name="hifive1_revb-plic-interrupts">
         <DisplayPath>software</DisplayPath>
         <Path>Projects/plic-interrupts/project.cdkproj</Path>
         <CopyFolder>Projects/plic-interrupts</CopyFolder>
