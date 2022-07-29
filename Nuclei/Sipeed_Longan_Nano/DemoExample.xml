@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>a9c7f86a3f638965bc531f468cc29aa2d8ad5d87</ResourceValidation>
+    <ResourceValidation>fde2bb1f064f8335a631e9d74a91ae2fb89712fa</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
@@ -117,14 +117,6 @@
         <Path>Projects/Sipeed Longan Nano/helloworld/project.cdkproj</Path>
         <CopyFolder>application/baremetal/helloworld</CopyFolder>
         <CopyFolder>Projects/Sipeed Longan Nano/helloworld</CopyFolder>
-        <RequiredComponent>common_base_resource</RequiredComponent>
-        <RequiredComponent>common_base_include</RequiredComponent>
-      </Project>
-      <Project Name="longan-nano-smphello">
-        <DisplayPath>application:baremetal</DisplayPath>
-        <Path>Projects/Sipeed Longan Nano/smphello/project.cdkproj</Path>
-        <CopyFolder>application/baremetal/smphello</CopyFolder>
-        <CopyFolder>Projects/Sipeed Longan Nano/smphello</CopyFolder>
         <RequiredComponent>common_base_resource</RequiredComponent>
         <RequiredComponent>common_base_include</RequiredComponent>
       </Project>

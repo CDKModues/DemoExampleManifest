@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <!--
+  Name是在CDK中用于显示的工具链名称，建议具备一定可读性
+  -->
+  <Name>GD32VF103工程示例</Name>
+  <!--
+  ID是工具组件的唯一标识符，不对外显示，全网唯一
+  -->
+  <ID>GD32VF103_Demo_Suites-SDK</ID>
+  <!--
+  Vendor是提供该第三方工具的厂商名
+  -->
+  <Vendor>GigaDevice（兆易创新）</Vendor>
+  <!--
+  URL一般是一个web可访问的网站，用于宣传使用
+  -->
+  <URL>https://www.riscv-mcu.com/quickstart-doc-u-gd32vf103.html</URL>
+  <!--
+  Description用于在CDK中显示对该工具的简单说明
+  -->
+  <Description>基于GD32VF103的工程示例集</Description>
+  <!--
+  Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
+  -->
+  <Version Value="V1.1.1">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>git</ResourceType>
+    <!--
+    ResourceURL是获取该资源的地址，外网可访问
+    -->
+    <ResourceURL>https://github.com/zchen409/GD32VF103_Demo_Suites.git</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>5f900a2ff448ccf2b6cf8b0b211b1f2b12403023</ResourceValidation>
+    <!--
+    1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
+    -->
+    <EnvPath></EnvPath>
+    <Components>
+      <Component ID="common_base_resource">
+        <Folder Name="GD32VF103_Firmware_Library"/>
+      </Component>
+      <Component ID="common_GD32VF103C_base_resource">
+        <Folder Name="GD32VF103C_START_Demo_Suites/Utilities"/>
+      </Component>
+      <Component ID="common_GD32VF103R_base_resource">
+        <Folder Name="GD32VF103R_START_Demo_Suites/Utilities"/>
+      </Component>
+      <Component ID="common_GD32VF103T_base_resource">
+        <Folder Name="GD32VF103T_START_Demo_Suites/Utilities"/>
+      </Component>
+      <Component ID="common_GD32VF103V_base_resource">
+        <Folder Name="GD32VF103V_EVAL_Demo_Suites/Utilities"/>
+      </Component>
+    </Components>
+    <Projects>
+      <Project Name="GPIO_Running_LED">
+        <DisplayPath>GD32VF103C</DisplayPath>
+        <Path>GD32VF103C_START_Demo_Suites/Projects/01_GPIO_Running_LED/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103C_START_Demo_Suites/Projects/01_GPIO_Running_LED</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103C_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Key_Polling_mode">
+        <DisplayPath>GD32VF103C</DisplayPath>
+        <Path>GD32VF103C_START_Demo_Suites/Projects/02_GPIO_Key_Polling_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103C_START_Demo_Suites/Projects/02_GPIO_Key_Polling_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103C_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EXTI_Key_Interrupt_mode">
+        <DisplayPath>GD32VF103C</DisplayPath>
+        <Path>GD32VF103C_START_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103C_START_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103C_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CDC_ACM">
+        <DisplayPath>GD32VF103C:USBFS:Device</DisplayPath>
+        <Path>GD32VF103C_START_Demo_Suites/Projects/04_USBFS/Device/CDC_ACM/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103C_START_Demo_Suites/Projects/04_USBFS/Device/CDC_ACM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103C_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC">
+        <DisplayPath>GD32VF103C:USBFS:Device</DisplayPath>
+        <Path>GD32VF103C_START_Demo_Suites/Projects/04_USBFS/Device/MSC/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103C_START_Demo_Suites/Projects/04_USBFS/Device/MSC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103C_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC_Host">
+        <DisplayPath>GD32VF103C:USBFS:Host</DisplayPath>
+        <Path>GD32VF103C_START_Demo_Suites/Projects/04_USBFS/Host/MSC_Host/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103C_START_Demo_Suites/Projects/04_USBFS/Host/MSC_Host</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103C_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Running_LED">
+        <DisplayPath>GD32VF103R</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/01_GPIO_Running_LED/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/01_GPIO_Running_LED</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Key_Polling_mode">
+        <DisplayPath>GD32VF103R</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/02_GPIO_Key_Polling_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/02_GPIO_Key_Polling_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EXTI_Key_Interrupt_mode">
+        <DisplayPath>GD32VF103R</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="TIMER_Key_EXTI">
+        <DisplayPath>GD32VF103R</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/04_TIMER_Key_EXTI/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/04_TIMER_Key_EXTI</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CDC_ACM">
+        <DisplayPath>GD32VF103R:USBFS:Device</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/05_USBFS/Device/CDC_ACM/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/05_USBFS/Device/CDC_ACM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC">
+        <DisplayPath>GD32VF103R:USBFS:Device</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/05_USBFS/Device/MSC/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/05_USBFS/Device/MSC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC">
+        <DisplayPath>GD32VF103R:USBFS:Host</DisplayPath>
+        <Path>GD32VF103R_START_Demo_Suites/Projects/05_USBFS/Host/MSC/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103R_START_Demo_Suites/Projects/05_USBFS/Host/MSC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103R_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Running_LED">
+        <DisplayPath>GD32VF103T</DisplayPath>
+        <Path>GD32VF103T_START_Demo_Suites/Projects/01_GPIO_Running_LED/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103T_START_Demo_Suites/Projects/01_GPIO_Running_LED</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103T_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Key_Polling_mode">
+        <DisplayPath>GD32VF103T</DisplayPath>
+        <Path>GD32VF103T_START_Demo_Suites/Projects/02_GPIO_Key_Polling_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103T_START_Demo_Suites/Projects/02_GPIO_Key_Polling_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103T_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EXTI_Key_Interrupt_mode">
+        <DisplayPath>GD32VF103T</DisplayPath>
+        <Path>GD32VF103T_START_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103T_START_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103T_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CDC_ACM">
+        <DisplayPath>GD32VF103T:USBFS:Device</DisplayPath>
+        <Path>GD32VF103T_START_Demo_Suites/Projects/04_USBFS/Device/CDC_ACM/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103T_START_Demo_Suites/Projects/04_USBFS/Device/CDC_ACM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103T_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC">
+        <DisplayPath>GD32VF103T:USBFS:Device</DisplayPath>
+        <Path>GD32VF103T_START_Demo_Suites/Projects/04_USBFS/Device/MSC/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103T_START_Demo_Suites/Projects/04_USBFS/Device/MSC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103T_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC_Host">
+        <DisplayPath>GD32VF103T:USBFS:Host</DisplayPath>
+        <Path>GD32VF103T_START_Demo_Suites/Projects/04_USBFS/Host/MSC_Host/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103T_START_Demo_Suites/Projects/04_USBFS/Host/MSC_Host</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103T_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Running_Led">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/01_GPIO_Running_Led/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/01_GPIO_Running_Led</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GPIO_Key_Polling_mode">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/02_GPIO_Key_Polling_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/02_GPIO_Key_Polling_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EXTI_Key_Interrupt_mode">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/03_EXTI_Key_Interrupt_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="USART_Printf">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/04_USART_Printf/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/04_USART_Printf</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="USART_Echo_Interrupt_mode">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/05_USART_Echo_Interrupt_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/05_USART_Echo_Interrupt_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="USART_DMA">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/06_USART_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/06_USART_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="ADC_conversion_triggered_by_timer">
+        <DisplayPath>GD32VF103V:ADC</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/07_ADC_conversion_triggered_by_timer/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/07_ADC_conversion_triggered_by_timer</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="ADC0_ADC1_Follow_up_mode">
+        <DisplayPath>GD32VF103V:ADC</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/08_ADC0_ADC1_Follow_up_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/08_ADC0_ADC1_Follow_up_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="ADC0_ADC1_Regular_Parallel_mode">
+        <DisplayPath>GD32VF103V:ADC</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/09_ADC0_ADC1_Regular_Parallel_mode/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/09_ADC0_ADC1_Regular_Parallel_mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DAC_Output_Voltage_Value">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/10_DAC_Output_Voltage_Value/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/10_DAC_Output_Voltage_Value</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="I2C_EEPROM">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/11_I2C_EEPROM/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/11_I2C_EEPROM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="SPI_SPI_Flash">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/12_SPI_SPI_Flash/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/12_SPI_SPI_Flash</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="I2S_Audio_Player">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/13_I2S_Audio_Player/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/13_I2S_Audio_Player</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EXMC_TouchScreen">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/14_EXMC_TouchScreen/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/14_EXMC_TouchScreen</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CAN_Network">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/15_CAN_Network/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/15_CAN_Network</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="RCU_Clock_Out">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/16_RCU_Clock_Out/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/16_RCU_Clock_Out</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="PMU_sleep_wakeup">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/17_PMU_sleep_wakeup/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/17_PMU_sleep_wakeup</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="RTC_Calendar">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/18_RTC_Calendar/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/18_RTC_Calendar</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="TIMER_Breath_LED">
+        <DisplayPath>GD32VF103V</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/19_TIMER_Breath_LED/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/19_TIMER_Breath_LED</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CDC_ACM">
+        <DisplayPath>GD32VF103V:USBFS:Device</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Device/CDC_ACM/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Device/CDC_ACM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC">
+        <DisplayPath>GD32VF103V:USBFS:Device</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Device/MSC/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Device/MSC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="HID_Host">
+        <DisplayPath>GD32VF103V:USBFS:Host</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Host/HID_Host/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Host/HID_Host</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="MSC_Host">
+        <DisplayPath>GD32VF103V:USBFS:Host</DisplayPath>
+        <Path>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Host/MSC_Host/CDK/project.cdkproj</Path>
+        <CopyFolder>GD32VF103V_EVAL_Demo_Suites/Projects/20_USBFS/Host/MSC_Host</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+        <RequiredComponent>common_GD32VF103V_base_resource</RequiredComponent>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <!--
+  Name是在CDK中用于显示的工具链名称，建议具备一定可读性
+  -->
+  <Name>CM32M4xxR_LQFP128_STB开发板工程示例</Name>
+  <!--
+  ID是工具组件的唯一标识符，不对外显示，全网唯一
+  -->
+  <ID>CM32M4xxR_LQFP128_STB-SDK</ID>
+  <!--
+  Vendor是提供该第三方工具的厂商名
+  -->
+  <Vendor>XinShengTech（芯昇科技）</Vendor>
+  <!--
+  URL一般是一个web可访问的网站，用于宣传使用
+  -->
+  <URL>https://github.com/CMIOT-XinShengTech/CMIOT.CM32M4xxR_Library</URL>
+  <!--
+  Description用于在CDK中显示对该工具的简单说明
+  -->
+  <Description>基于CM32M4xxR的工程示例集</Description>
+  <!--
+  Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
+  -->
+  <Version Value="V1.1.0">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>git</ResourceType>
+    <!--
+    ResourceURL是获取该资源的地址，外网可访问
+    -->
+    <ResourceURL>https://github.com/zchen409/CMIOT.CM32M4xxR_Library.git</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>3601ab976daa7ce34a37365df539081385744ae0</ResourceValidation>
+    <!--
+    1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
+    -->
+    <EnvPath></EnvPath>
+    <Components>
+      <Component ID="common_base_resource">
+        <Folder Name="Drivers"/>
+        <Folder Name="Projects/CM32M4xxR_LQFP128_STB/BSP"/>
+      </Component>
+    </Components>
+    <Projects>
+      <Project Name="4ADCs_DMA">
+        <DisplayPath>ADC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/ADC/4ADCs_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/ADC/4ADCs_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="AES">
+        <DisplayPath>ALGO</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/ALGO/AES/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/ALGO/AES</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="BkpData">
+        <DisplayPath>BKP</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/BKP/BkpData/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/BKP/BkpData</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Dual_CAN1_2">
+        <DisplayPath>bxCAN</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/bxCAN/Dual_CAN1_2/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/bxCAN/Dual_CAN1_2</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CompBreak">
+        <DisplayPath>COMP</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/COMP/CompBreak/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/COMP/CompBreak</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CalCRC">
+        <DisplayPath>CRC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/CRC/CalCRC/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/CRC/CalCRC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DoubleModeDMASineWave">
+        <DisplayPath>DAC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/DAC/DoubleModeDMASineWave/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/DAC/DoubleModeDMASineWave</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="FLASH_RAM">
+        <DisplayPath>DMA</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/DMA/FLASH_RAM/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/DMA/FLASH_RAM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="KeyInterrupt">
+        <DisplayPath>EXTI</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/EXTI/KeyInterrupt/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/EXTI/KeyInterrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Flash_DMA_Program">
+        <DisplayPath>Flash</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/Flash/Flash_DMA_Program/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/Flash/Flash_DMA_Program</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="IORemap">
+        <DisplayPath>GPIO</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/GPIO/IORemap/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/GPIO/IORemap</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EEPROM">
+        <DisplayPath>I2C</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/I2C/EEPROM/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/I2C/EEPROM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="I2S_DMA">
+        <DisplayPath>I2S</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/I2S/I2S_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/I2S/I2S_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CoreMark">
+        <DisplayPath>iCache</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/iCache/CoreMark/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/iCache/CoreMark</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="IWDG_Reset">
+        <DisplayPath>IWDG</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/IWDG/IWDG_Reset/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/IWDG/IWDG_Reset</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="OpaAdByTim">
+        <DisplayPath>OPA</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/OPA/OpaAdByTim/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/OPA/OpaAdByTim</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="AlarmWakeUp">
+        <DisplayPath>PWR</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/PWR/AlarmWakeUp/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/PWR/AlarmWakeUp</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="QSPI_DMA">
+        <DisplayPath>QSPI</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/QSPI/QSPI_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/QSPI/QSPI_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="RCC_ClockConfig">
+        <DisplayPath>RCC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/RCC/RCC_ClockConfig/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/RCC/RCC_ClockConfig</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Interrupt_Nesting">
+        <DisplayPath>RISC-V</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/RISC-V/Interrupt_Nesting/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/RISC-V/Interrupt_Nesting</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="PMP">
+        <DisplayPath>RISC-V</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/RISC-V/PMP/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/RISC-V/PMP</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GetRand">
+        <DisplayPath>RNGC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/RNGC/GetRand/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/RNGC/GetRand</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Alarm">
+        <DisplayPath>RTC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/RTC/Alarm/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/RTC/Alarm</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="SPI_DMA">
+        <DisplayPath>SPI</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/SPI/SPI_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/SPI/SPI_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DMA">
+        <DisplayPath>TIM</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/TIM/DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/TIM/DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="OCActive">
+        <DisplayPath>TIM</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/TIM/OCActive/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/TIM/OCActive</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="TimeBase">
+        <DisplayPath>TIM</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/TIM/TimeBase/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/TIM/TimeBase</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="TSC_SW Mode">
+        <DisplayPath>TSC</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/TSC/TSC_SW Mode/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/TSC/TSC_SW Mode</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DMA_Interrupt">
+        <DisplayPath>USART</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/USART/DMA_Interrupt/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/USART/DMA_Interrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="WWDG_Reset">
+        <DisplayPath>WWDG</DisplayPath>
+        <Path>Projects/CM32M4xxR_LQFP128_STB/Examples/WWDG/WWDG_Reset/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M4xxR_LQFP128_STB/Examples/WWDG/WWDG_Reset</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>
