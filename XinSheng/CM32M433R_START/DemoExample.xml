@@ -215,4 +215,180 @@
       </Project>
     </Projects>
   </Version>
+  <Version Value="V1.1.1">
+    <ResourceType>git</ResourceType>
+    <ResourceURL>https://github.com/zchen409/CMIOT.CM32M4xxR_Library.git</ResourceURL>
+    <ResourceValidation>fe0dbfb9540585893da2027fd281ec3f20b05548</ResourceValidation>
+    <EnvPath></EnvPath>
+    <Components>
+      <Component ID="common_base_resource">
+        <Folder Name="Drivers"/>
+        <Folder Name="Projects/CM32M433R-START/BSP"/>
+      </Component>
+    </Components>
+    <Projects>
+      <Project Name="4ADCs_DMA">
+        <DisplayPath>ADC</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/ADC/4ADCs_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/ADC/4ADCs_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="AES">
+        <DisplayPath>ALGO</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/ALGO/AES/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/ALGO/AES</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="BkpData">
+        <DisplayPath>BKP</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/BKP/BkpData/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/BKP/BkpData</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="LoopBack_CAN1">
+        <DisplayPath>bxCAN</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/bxCAN/LoopBack_CAN1/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/bxCAN/LoopBack_CAN1</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CompBreak">
+        <DisplayPath>COMP</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/COMP/CompBreak/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/COMP/CompBreak</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CalCRC">
+        <DisplayPath>CRC</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/CRC/CalCRC/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/CRC/CalCRC</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DoubleModeDMASineWave">
+        <DisplayPath>DAC</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/DAC/DoubleModeDMASineWave/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/DAC/DoubleModeDMASineWave</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="FLASH_RAM">
+        <DisplayPath>DMA</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/DMA/FLASH_RAM/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/DMA/FLASH_RAM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="KeyInterrupt">
+        <DisplayPath>EXTI</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/EXTI/KeyInterrupt/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/EXTI/KeyInterrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Flash_DMA_Program">
+        <DisplayPath>Flash</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/Flash/Flash_DMA_Program/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/Flash/Flash_DMA_Program</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="IORemap">
+        <DisplayPath>GPIO</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/GPIO/IORemap/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/GPIO/IORemap</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="EEPROM">
+        <DisplayPath>I2C</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/I2C/EEPROM/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/I2C/EEPROM</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="CoreMark">
+        <DisplayPath>iCache</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/iCache/CoreMark/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/iCache/CoreMark</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="IWDG_Reset">
+        <DisplayPath>IWDG</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/IWDG/IWDG_Reset/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/IWDG/IWDG_Reset</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="OpaAdByTim">
+        <DisplayPath>OPA</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/OPA/OpaAdByTim/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/OPA/OpaAdByTim</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="AlarmWakeUp">
+        <DisplayPath>PWR</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/PWR/AlarmWakeUp/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/PWR/AlarmWakeUp</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="RCC_ClockConfig">
+        <DisplayPath>RCC</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/RCC/RCC_ClockConfig/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/RCC/RCC_ClockConfig</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Interrupt_Nesting">
+        <DisplayPath>RISC-V</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/RISC-V/Interrupt_Nesting/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/RISC-V/Interrupt_Nesting</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="PMP">
+        <DisplayPath>RISC-V</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/RISC-V/PMP/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/RISC-V/PMP</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="GetRand">
+        <DisplayPath>RNGC</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/RNGC/GetRand/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/RNGC/GetRand</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="Alarm">
+        <DisplayPath>RTC</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/RTC/Alarm/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/RTC/Alarm</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="SPI_DMA">
+        <DisplayPath>SPI</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/SPI/SPI_DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/SPI/SPI_DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DMA">
+        <DisplayPath>TIM</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/TIM/DMA/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/TIM/DMA</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="OCActive">
+        <DisplayPath>TIM</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/TIM/OCActive/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/TIM/OCActive</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="TimeBase">
+        <DisplayPath>TIM</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/TIM/TimeBase/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/TIM/TimeBase</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="DMA_Interrupt">
+        <DisplayPath>USART</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/USART/DMA_Interrupt/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/USART/DMA_Interrupt</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+      <Project Name="WWDG_Reset">
+        <DisplayPath>WWDG</DisplayPath>
+        <Path>Projects/CM32M433R-START/Examples/WWDG/WWDG_Reset/CDK/project.cdkproj</Path>
+        <CopyFolder>Projects/CM32M433R-START/Examples/WWDG/WWDG_Reset</CopyFolder>
+        <RequiredComponent>common_base_resource</RequiredComponent>
+      </Project>
+    </Projects>
+  </Version>
 </DemoExample>
