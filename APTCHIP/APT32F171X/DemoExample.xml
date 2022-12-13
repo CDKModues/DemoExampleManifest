@@ -23,7 +23,7 @@
   <!--
   Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
   -->
-  <Version Value="V1.0.0">
+  <Version Value="V1.0.1">
     <!--
     ResourceType支持的类型有 tar.gz / zip / git 
     -->
@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>42f33537f75c79fbebf15a870479645a6fbbb06e</ResourceValidation>
+    <ResourceValidation>ff8f88440b0fabb55656de9a81fdcbb44cff5c38</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
