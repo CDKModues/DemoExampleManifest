@@ -1,13 +1,13 @@
-<?xml version="1.1.5" encoding="UTF-8"?>
+<?xml version="1.15.0" encoding="UTF-8"?>
 <DemoExample>
   <!--
   Name是在CDK中用于显示的工具链名称，建议具备一定可读性
   -->
-  <Name>爱普特开发板APT32F102 std Lib</Name>
+  <Name>爱普特开发板APT32F102x std Lib</Name>
   <!--
   ID是工具组件的唯一标识符，不对外显示，全网唯一
   -->
-  <ID>APT32F102_STD_SDK</ID>
+  <ID>APT32F102x_STD_SDK</ID>
   <!--
   Vendor是提供该第三方工具的厂商名
   -->
@@ -19,11 +19,11 @@
   <!--
   Description用于在CDK中显示对该工具的简单说明
   -->
-  <Description>基于APT32F102开发板的std库文件示例</Description>
+  <Description>基于APT32F102x开发板的std库文件示例</Description>
   <!--
   Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
   -->
-  <Version Value="V1.1.5">
+  <Version Value="V1.15.0">
     <!--
     ResourceType支持的类型有 tar.gz / zip / git 
     -->
@@ -31,7 +31,7 @@
     <!--
     ResourceURL是获取该资源的地址，外网可访问
     -->
-    <ResourceURL>https://github.com/APT-AEteam/APT32F102_std.git</ResourceURL>
+    <ResourceURL>https://github.com/APT-AEteam/APT32F102x_std.git</ResourceURL>
     <!--
     ResourceValidation用于验证ResourceURL的安全性和有效性；
     如果是tar.gz / zip 类型，这里需要提供MD5值；
@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>9a9727011eb4b26a29d1aeb45b481c542e4f2626</ResourceValidation>
+    <ResourceValidation>3fa1569a47a68824d49792639342f8d2928640a6</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
@@ -67,8 +67,8 @@
       <!--
       每个独立的Project节点描述一个工程
       -->
-      <Project Name="apt32f102_demo">
-        <Path>Source/std_apt32f110x.cdkproj</Path>
+      <Project Name="APT32F102x_StdPeriph_Lib">
+        <Path>Source/apt32f102.cdkproj</Path>
         <CopyFolder>Source</CopyFolder>
       </Project>
     
