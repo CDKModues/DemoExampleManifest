@@ -31,7 +31,7 @@
     <!--
     ResourceURL是获取该资源的地址，外网可访问
     -->
-    <ResourceURL>https://github.com/APT-AEteam/APT32F110x_std.git</ResourceURL>
+    <ResourceURL>https://github.com/APT-AEteam/APT32F171_std.git</ResourceURL>
     <!--
     ResourceValidation用于验证ResourceURL的安全性和有效性；
     如果是tar.gz / zip 类型，这里需要提供MD5值；
@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>9a9727011eb4b26a29d1aeb45b481c542e4f2626</ResourceValidation>
+    <ResourceValidation>cdf27639a910dec949f7518730aa16cd77305dc5</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
@@ -67,8 +67,8 @@
       <!--
       每个独立的Project节点描述一个工程
       -->
-      <Project Name="apt32f110x_demo">
-        <Path>Source/std_apt32f110x.cdkproj</Path>
+      <Project Name="apt32f171a">
+        <Path>Source/apt32f171a.cdkproj</Path>
         <CopyFolder>Source</CopyFolder>
       </Project>
     
