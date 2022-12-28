@@ -1,4 +1,4 @@
-<?xml version="1.0.4" encoding="UTF-8"?>
+<?xml version="1.0.5" encoding="UTF-8"?>
 <DemoExample>
   <!--
   Name是在CDK中用于显示的工具链名称，建议具备一定可读性
@@ -23,7 +23,7 @@
   <!--
   Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
   -->
-  <Version Value="V1.0.4">
+  <Version Value="V1.0.5">
     <!--
     ResourceType支持的类型有 tar.gz / zip / git 
     -->
@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>9a9727011eb4b26a29d1aeb45b481c542e4f2626</ResourceValidation>
+    <ResourceValidation>64357eff3bc67999251c824e90be32cc94a15265</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
