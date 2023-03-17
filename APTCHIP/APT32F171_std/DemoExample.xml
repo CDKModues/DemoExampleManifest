@@ -68,7 +68,7 @@
       每个独立的Project节点描述一个工程
       -->
       <Project Name="apt32f171_demo">
-        <Path>Source/std_apt32f171.cdkproj</Path>
+        <Path>Source/apt32f171a.cdkproj</Path>
         <CopyFolder>Source</CopyFolder>
       </Project>
     
