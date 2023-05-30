@@ -74,8 +74,8 @@
       每个独立的Project节点描述一个工程
       -->
       <Project Name="apt32f173x_demo">
-        <Path>demo/demo.cdkproj</Path>
-        <CopyFolder>demo</CopyFolder>
+        <Path>apt32f173x/apt32f173x.cdkproj</Path>
+        <CopyFolder>apt32f173x</CopyFolder>
         <RequiredComponent>CODE_APT32F173</RequiredComponent>
       </Project>
     
