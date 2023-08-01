@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoExample>
+  <!--
+  Name是在CDK中用于显示的工具链名称，建议具备一定可读性
+  -->
+  <Name>中科本原开发板例程</Name>
+  <!--
+  ID是工具组件的唯一标识符，不对外显示，全网唯一
+  -->
+  <ID>FDMTEK-SDK</ID>
+  <!--
+  Vendor是提供该第三方工具的厂商名
+  -->
+  <Vendor>FDMTEK（中科本原）</Vendor>
+  <!--
+  URL一般是一个web可访问的网站，用于宣传使用
+  -->
+  <URL>http://www.fdmtek.com/</URL>
+  <!--
+  Description用于在CDK中显示对该工具的简单说明
+  -->
+  <Description>中科本原开发板例程</Description>
+  <!--
+  Version节点用于描述每个具体的资源，可以存在多个Value值不同的Version用来描述该资源的多个版本
+  -->
+  <Version Value="V1.0.0">
+    <!--
+    ResourceType支持的类型有 tar.gz / zip / git 
+    -->
+    <ResourceType>zip</ResourceType>
+    <!--
+    ResourceURL是获取该资源的地址，外网可访问
+    -->
+    <ResourceURL>http://www.fdmtek.com/cdk/Demo_Example/R335.zip</ResourceURL>
+    <!--
+    ResourceValidation用于验证ResourceURL的安全性和有效性；
+    如果是tar.gz / zip 类型，这里需要提供MD5值；
+      Windows下面计算文件MD5值，可以直接在Windows CMD命令行中输入：
+      certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
+    如果是git仓库，这里需要提供commit的hash值
+    -->
+    <ResourceValidation>8a9d78e481f107b5275fe99d18c9cb2e</ResourceValidation>
+    <!--
+    1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
+    -->
+    <EnvPath></EnvPath>
+    <Projects>
+      <Project Name="R335-BareMetal">
+        <DisplayPath>Examples</DisplayPath>
+        <Path>R335/bare-metal/R335-BareMetal.cdkproj</Path>
+        <CopyFolder>R335/bare-metal/src</CopyFolder>
+        <CopyFolder>R335/bare-metal/system</CopyFolder>
+      </Project>
+    </Projects>
+  </Version>
+</DemoExample>
