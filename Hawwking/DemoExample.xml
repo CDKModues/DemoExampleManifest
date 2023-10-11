@@ -31,7 +31,7 @@
     <!--
     ResourceURL是获取该资源的地址，外网可访问
     -->
-    <ResourceURL>https://gitee.com/haawking/cdk_lib.git</ResourceURL>
+    <ResourceURL>https://gitee.com/haawking/cdk-driver.git</ResourceURL>
     <!--
     ResourceValidation用于验证ResourceURL的安全性和有效性；
     如果是tar.gz / zip 类型，这里需要提供MD5值；
@@ -39,7 +39,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>4b7695957d8e0eeb67a3ebb4c38228bd5c76268d</ResourceValidation>
+    <ResourceValidation>db36c6ebd7d1261d835616fbbc202bec481d4419</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
@@ -71,7 +71,7 @@
     <!--
     ResourceURL是获取该资源的地址，外网可访问
     -->
-    <ResourceURL>https://gitee.com/haawking/cdk_lib.git</ResourceURL>
+    <ResourceURL>https://gitee.com/haawking/cdk-driver.git</ResourceURL>
     <!--
     ResourceValidation用于验证ResourceURL的安全性和有效性；
     如果是tar.gz / zip 类型，这里需要提供MD5值；
@@ -79,7 +79,7 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>4b7695957d8e0eeb67a3ebb4c38228bd5c76268d</ResourceValidation>
+    <ResourceValidation>d572ead32ba30bcba360df39d4099c5c69a647d1</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
@@ -89,92 +89,92 @@
         <DisplayPath>HXS320F28027:BBB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28027_BBB_BasicProject/HXS320F28027.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28027_BBB_BasicProject</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027BBB/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027BBB/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027BBB/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027BBB/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027BBB/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027BBB/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F28027:ECD</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28027_ECD_BasicProject/HXS320F28027.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28027_ECD_BasicProject</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027ECD/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027ECD/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027ECD/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027ECD/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027ECD/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28027/HXS320F28027ECD/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F28034:BBB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28034_BBB_BasicProject/HXS320F28034.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28034_BBB_BasicProject</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBB/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBB/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBB/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBB/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBB/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBB/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F28034:BBC</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28034_BBC_BasicProject/HXS320F28034.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28034_BBC_BasicProject</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBC/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBC/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBC/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBC/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBC/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034BBC/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F28034:CDD</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28034_CDD_BasicProject/HXS320F28034.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28034_CDD_BasicProject</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034CDD/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034CDD/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034CDD/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034CDD/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034CDD/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28034/HXS320F28034CDD/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F28035:ECB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28035_ECB_BasicProject/HXS320F28035.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28035_ECB_BasicProject</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject_CLA">
         <DisplayPath>HXS320F28035:ECB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F28035_ECB_BasicProject_CLA/HXS320F28035.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F28035_ECB_BasicProject_CLA</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/Basic Project(CLA)/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/Basic Project(CLA)/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/Basic Project(CLA)/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/BasicProjectCLA/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/BasicProjectCLA/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F28035/HXS320F28035ECB/BasicProjectCLA/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F280025C:EDB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F280025C_EDB_BasicProject/HXS320F280025C.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F280025C_EDB_BasicProject</CopyFolder>
-		<CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project/device</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProject/device</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject_BitField">
         <DisplayPath>HXS320F280025C:EDB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F280025C_EDB_BasicProject_BitField/HXS320F280025C.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F280025C_EDB_BasicProject_BitField</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project(BitField)/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project(BitField)/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/Basic Project(BitField)/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProjectBitField/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProjectBitField/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280025C/HXS320F280025CEDB/BasicProjectBitField/src</CopyFolder>
       </Project>
       <Project Name="BasicProject">
         <DisplayPath>HXS320F280049C:EDB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F280049C_EDB_BasicProject/HXS320F280049C.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F280049C_EDB_BasicProject</CopyFolder>
-		<CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project/device</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProject/device</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProject/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProject/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProject/src</CopyFolder>
       </Project>
       <Project Name="BasicProject_CLA">
         <DisplayPath>HXS320F280049C:EDB</DisplayPath>
         <Path>LIB_HX2000_V2.0/projects/CDK/HXS320F280049C_EDB_BasicProject_CLA/HXS320F280049C.cdkproj</Path>
         <CopyFolder>LIB_HX2000_V2.0/projects/CDK/HXS320F280049C_EDB_BasicProject_CLA</CopyFolder>
-		<CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project(CLA)/device</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project(CLA)/haawking-drivers</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project(CLA)/lib</CopyFolder>
-        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/Basic Project(CLA)/src</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProjectCLA/device</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProjectCLA/haawking-drivers</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProjectCLA/lib</CopyFolder>
+        <CopyFolder>LIB_HX2000_V2.0/HXS320F280049C/HXS320F280049CEDB/BasicProjectCLA/src</CopyFolder>
       </Project>
     </Projects>
   </Version>
