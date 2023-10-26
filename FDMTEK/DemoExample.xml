@@ -31,7 +31,7 @@
     <!--
     ResourceURL是获取该资源的地址，外网可访问
     -->
-    <ResourceURL>http://www.fdmtek.com/cdk/Demo_Example/R335.zip</ResourceURL>
+    <ResourceURL>http://www.fdmtek.com/cdk/231026/Demo_Example/RV335.zip</ResourceURL>
     <!--
     ResourceValidation用于验证ResourceURL的安全性和有效性；
     如果是tar.gz / zip 类型，这里需要提供MD5值；
@@ -39,17 +39,17 @@
       certutil -hashfile D:\your\file\fullpath\filename.tar.gz MD5
     如果是git仓库，这里需要提供commit的hash值
     -->
-    <ResourceValidation>74bcad276e1ca23b8c951368016f56fd</ResourceValidation>
+    <ResourceValidation>02aa64a227922b32e65183f60bfde96b</ResourceValidation>
     <!--
     1 EnvPath用来设置环境变量，在DemoExample.xml文件中不需要该节点
     -->
     <EnvPath></EnvPath>
     <Projects>
-      <Project Name="R335-BareMetal">
+      <Project Name="RV335-BareMetal">
         <DisplayPath>Examples</DisplayPath>
-        <Path>R335/bare-metal/R335-BareMetal.cdkproj</Path>
-        <CopyFolder>R335/bare-metal/src</CopyFolder>
-        <CopyFolder>R335/bare-metal/system</CopyFolder>
+        <Path>RV335/bare-metal/RV335-BareMetal.cdkproj</Path>
+        <CopyFolder>RV335/bare-metal/src</CopyFolder>
+        <CopyFolder>RV335/bare-metal/system</CopyFolder>
       </Project>
     </Projects>
   </Version>
